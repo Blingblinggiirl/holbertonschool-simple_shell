@@ -7,7 +7,7 @@ int main(void)
   //ssize_t y size_t son sinónimos de unsigned int
   char *stringg;
 
-  printf("$");
+  printf("$ ");
   /* pasas a getline los argumentos inicializados: */
   //numero_bytes = tamaño del texto que escribis después del $
   //stringg = (char *) malloc (numero_bytes + 1)
@@ -17,7 +17,7 @@ int main(void)
   stringg = NULL;
   bytes_leidos = getline(&stringg, &numero_bytes, stdin);
 
-  if (stringg == NULL)
+  if (bytes_leidos == -1)
     printf("Error.");
   else
     printf("%s", stringg);
