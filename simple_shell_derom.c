@@ -21,6 +21,7 @@ int main(void)
 		if (savegetline == -1)
 			break;
 
+
 		buffer_token[0] = strtok(buffer, " \t\n");
 
 		if (buffer_token[0] == "env")
@@ -32,7 +33,6 @@ int main(void)
 			execve(buffer_token[0], buffer_token, NULL);
 		else
 			wait(&status);
-			free(buffer_token);
 	}
 	return (0);
 }
