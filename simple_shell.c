@@ -21,10 +21,10 @@ int main(void)
 		if (savegetline == -1)
 			break;
 
-		buffer_token = _strtok(buffer, " \t\n");
+		buffer_token = strtok(buffer, " \t\n");
 
 		if (buffer_token[0] == "env")
-			*_getenv();
+			getenv("PATH");
 		pid = fork();
 		if (pid == -1)
 			perror("Error");

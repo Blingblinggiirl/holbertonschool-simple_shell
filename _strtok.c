@@ -4,7 +4,6 @@ int _strtok()
 	char *buffer, *buff_cpy, *buff_token;
 	size_t bufsize = 32;
 
-	buffer = malloc(bufsize * sizeof(char));
 	if (buffer == NULL)
 	{
 		perror("Error");

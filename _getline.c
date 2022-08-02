@@ -8,10 +8,10 @@ int main(void)
   char *stringg;
 
   printf("$ ");
-  /* pasas a getline los argumentos inicializados: */
-  //numero_bytes = tamaño del texto que escribis después del $
-  //stringg = (char *) malloc (numero_bytes + 1)
-  /*poner numero_bytes a 0 y stringg a NULL, para que él mismo te haga
+  /* pasas a getline los argumentos inicializados:
+   * numero_bytes = tamaño del texto que escribis después del $
+   * stringg = (char *) malloc (numero_bytes + 1)
+   * *poner numero_bytes a 0 y stringg a NULL, para que él mismo te haga
   la reserva necesaria*/
   numero_bytes = 0;
   stringg = NULL;
