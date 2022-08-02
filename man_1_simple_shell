@@ -1,1 +1,7 @@
-manual for the simple shell
+SIMPLE_SHELL		Linux Programmer's Manual		SIMPLE_SHELL
+
+NAME
+	simple_shell - UNIX command line interpreter.
+
+SYNOPSIS
+	
