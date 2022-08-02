@@ -21,7 +21,7 @@ int main(void)
 		if (savegetline == -1)
 			break;
 
-		buffer_token = strtok(buffer, " \t\n");
+		buffer_token[0] = strtok(buffer, " \t\n");
 
 		if (buffer_token[0] == "env")
 			getenv("PATH");
