@@ -1,3 +1,4 @@
+#include "main.h"
 int _strtok()
 {
 	char *buffer, *buff_cpy, *buff_token;
