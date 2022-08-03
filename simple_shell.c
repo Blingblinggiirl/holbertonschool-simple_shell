@@ -16,7 +16,7 @@ int main(__attribute__((unused)) int ac,  __attribute__((unused)) char **av, cha
 		if (getline(&buffer, &len, stdin) == -1)
 			break;
 		token = strtok(buffer, " \t\n"); /* aca tokenizas hasta un tab o enter*/
-		if (!strcmp(token, "exit") == 0) /* usas strcmp pa comparar lo que te pasaron, creando asi el exit */
+		if (!strcmp(token, "exit")) /* usas strcmp pa comparar lo que te pasaron, creando asi el exit */
 		{
 			free(buffer);
 			return (str);
