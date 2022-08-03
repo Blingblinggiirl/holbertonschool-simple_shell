@@ -18,11 +18,11 @@ int main(__attribute__((unused)) int ac,  __attribute__((unused)) char **av, cha
 	while (interactive)
 	{
 		interactive = isatty(0); /* checkea modo interactivo */
-		printf(# );/* aqui deberia ir cisfun$ */
+		printf("# ");/* aqui deberia ir cisfun$ */
 
 		if (getline(&buffer, &len, stdin) == -1) /* Esto es el control D */
 			break;
-		token = strtok(buffer, " \t\n\R"); /* aca tokenizas hasta un tab o enter*/
+		token = strtok(buffer, " \t\n\r"); /* aca tokenizas hasta un tab o enter*/
 		if (!strcmp(token, "exit")) /* Funcion exit,  usas strcmp pa comparar lo que te pasaron */
 		{
 			free(buffer);
