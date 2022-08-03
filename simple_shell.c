@@ -22,6 +22,8 @@ int main(__attribute__((unused)) int ac,  __attribute__((unused)) char **av, cha
 			break;
 		if (!strcmp(token, "exit")) /* usas strcmp pa comparar lo que te pasaron, creando asi el exit */
 		{
+			if (token)
+				free(token);
 			free(buffer);
 			return (str);
 		}
