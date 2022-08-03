@@ -18,7 +18,7 @@ int main(__attribute__((unused)) int ac,  __attribute__((unused)) char **av, cha
 	while (interactive)
 	{
 		interactive = isatty(0); /* checkea modo interactivo */
-		printf("# ");/* aqui deberia ir cisfun$ */
+		/* printf("# "); aqui deberia ir cisfun$ */
 
 		if (getline(&buffer, &len, stdin) == -1) /* Esto es el control D */
 			break;
