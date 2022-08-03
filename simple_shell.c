@@ -1,38 +1,58 @@
 #include "main.h"
 /**
- * main - check the code
- *
- *
- */
-int main(void)
+*
+*
+*
+*
+*/
+
+int main(__attribute__((unused)) int ac,  __attribute__((unused)) char **av, char **env)
 {
-	char *buffer = NULL; /** first argument of getline */
-	int savegetline, status; /* status: for wait */
-	char **buffer_token; /** para guardar la tokeniz en la variable (strtok)*/
-	size_t bufsize = 0; /** arguments de getline */
-	pid_t pid;
+	char *buffer = NULL, *token;
+	int status = 0;
+	char *args[1024];
+	size_t str, len = 0;
+	int interactive = 1;
+	int child;
 
-	while (1)
+	while (interactive)
 	{
-		write(1, "#cisfun$", 8);
+		interactive = isatty(0); /* checkea modo interactivo */
+		write(1, "$ ", 2); /* aqui deberia ir cisfun$ */
 
-		savegetline = getline(&buffer, &bufsize, stdin);
-
-		if (savegetline == -1)
+		if (getline(&buffer, &len, stdin) == -1)
 			break;
+		token = strtok(buffer, " \t\n"); /* aca tokenizas hasta un tab o enter*/
+		if (!strcmp(token, "exit")) /* usas strcmp pa comparar lo que te pasaron */
+		{
+			free(buffer);
+			return (str);
+		}
+		for (str = 0; str < 1024 && token != NULL; str++)
+		{
+			args[str] = token;
+			token = strtok(NULL, " \t\n");
+		}
+		args[str] = NULL;
+		if (!args[0])
+		{
+			free(args[0]);
+			free(buffer);
+			return (0);
+		}
+		child = fork();
+		if (child == 0)
+		{
 
-		buffer_token[0] = strtok(buffer, " \t\n");
-
-		if (buffer_token[0] == "env")
-			getenv("PATH");
-		pid = fork();
-		if (pid == -1)
-			perror("Error");
-		else if (pid == 0)
-			execve(buffer_token[0], buffer_token, NULL);
+			if (execve(args[0], args, env) == -1)
+			{
+				perror("Error");
+				return (0);
+			}
+		}
 		else
 			wait(&status);
-			free(buffer_token);
 	}
+	free(buffer);
 	return (0);
 }
