@@ -23,16 +23,18 @@ int main(void)
 
 		buffer_token[0] = strtok(buffer, " \t\n");
 
-		if (buffer_token[0] == "env")
+		if (strcmp(buffer_token[0], "env") == 0)
 			getenv("PATH");
 		pid = fork();
 		if (pid == -1)
 			perror("Error");
-		else if (pid == 0)
+		if (pid == 0)
 			execve(buffer_token[0], buffer_token, NULL);
 		else
+		{
 			wait(&status);
 			free(buffer_token);
+		}
 	}
 	return (0);
 }

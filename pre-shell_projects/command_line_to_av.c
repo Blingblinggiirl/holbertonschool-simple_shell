@@ -9,6 +9,6 @@ int main() {
    while( token != NULL ) {
       printf( " %s\n", token ); //printing each token
       token = strtok(NULL, " ");
-   }
+   } strtok(buffer, " \t\n");
    return 0;
 }
