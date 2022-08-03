@@ -20,13 +20,13 @@ int main(__attribute__((unused)) int ac,  __attribute__((unused)) char **av, cha
 		interactive = isatty(0); /* checkea modo interactivo */
 		write(1, "$ ", 2); /* aqui deberia ir cisfun$ */
 
-		if (getline(&buffer, &len, stdin) == -1)
+		if (getline(&buffer, &len, stdin) == -1) /* Esto es el control D */
 			break;
 		token = strtok(buffer, " \t\n"); /* aca tokenizas hasta un tab o enter*/
-		if (!strcmp(token, "exit")) /* usas strcmp pa comparar lo que te pasaron */
+		if (!strcmp(token, "exit")) /* Funcion exit,  usas strcmp pa comparar lo que te pasaron */
 		{
 			free(buffer);
-			return (str);
+			return(0);	
 		}
 		for (str = 0; str < 1024 && token != NULL; str++)
 		{
