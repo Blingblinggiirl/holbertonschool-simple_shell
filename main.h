@@ -14,11 +14,14 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
+extern char **environ;
+char *check_space(char *buff);
+char *_which(char *av);
+int stat_checker(char *args);
+char *token_checker(char *buff, char **array, char *delim);
 void _puts(char *str);
 char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
 char *_strdup(char *str);
-int _strtok();
-char *_getenv(const char *name);
 #endif
