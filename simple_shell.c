@@ -1,7 +1,6 @@
 #include "main.h"
 
-
-int main(__attribute__((unused)) int ac,  __attribute__((unused)) char **av, char **env)
+int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av, char **env)
 {
 	char *buffer = NULL, *token;
 	int status = 0;
@@ -10,28 +9,27 @@ int main(__attribute__((unused)) int ac,  __attribute__((unused)) char **av, cha
 	int interactive = 1;
 	int child;
 	int x;
-	
 
 	while (interactive)
 	{
-
+		printf("$cisfun ");
 		if (getline(&buffer, &len, stdin) == -1)
 			break;
 		token = strtok(buffer, " \t\n"); /* aca tokenizas hasta un tab o enter*/
 		if (token == NULL)
 			break;
-		if (!strcmp(token, "exit")) /* usas strcmp pa comparar lo que te pasaron, creando asi el exit */
+		if (!strcmp(token, "exit"))
 		{
 			free(buffer);
 			return (str);
 		}
-		if (!strcmp(token, "env")) /* esta es la parte para la task 6 sobre env,comparo si token es env */
+		if (!strcmp(token, "env"))
 		{
-			for (x = 0; env[x] != NULL; x++) 
+			for (x = 0; env[x] != NULL; x++)
 				printf("%s\n", env[x]);
 			continue;
 		}
-		for (str = 0; str < 1024 && token != NULL; str++) /* aqui seria la parte de los argumentos, recorres los args siempre y cuando sea distinto de nulo */
+		for (str = 0; str < 1024 && token != NULL; str++)
 		{
 			args[str] = token;
 			token = strtok(NULL, " \t\n");
@@ -43,11 +41,9 @@ int main(__attribute__((unused)) int ac,  __attribute__((unused)) char **av, cha
 			free(buffer);
 			return (0);
 		}
-		
 		child = fork();
 		if (child == 0)
 		{
-
 			if (execve(args[0], args, env) == -1)
 			{
 				perror("Error");
