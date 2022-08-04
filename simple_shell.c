@@ -20,6 +20,7 @@ int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av, char
 			break;
 		if (strcmp(token, "exit") == 0)
 		{
+			free(buffer);
 			return(str);
 		}
 		if (!strcmp(token, "env"))
