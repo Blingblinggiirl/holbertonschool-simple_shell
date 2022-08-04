@@ -1,20 +1,17 @@
-.TH man 1 "04 August 2022" "1.0" "simple_shell man page"
-.SH NAME 
-simple_shell /- homemade UNIX command line interpreter
+.TH man 1 "04 August 2022, Holberton School Uruguay" "1.0" "simple_shell man page"
+.SH NAME
+simple_shell
 .SH SYNOPSIS
-#include <stdio.h>
-#include <ctype.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-#include <stddef.h>
-#include <stdarg.h>
-#include <unistd.h>
-#include <signal.h>
-#include <sys/file.h>
-#include <sys/types.h>
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <sys/wait.h>
+$cisfun [name of the command][arguments]
 .SH DESCRIPTION
-
+Holbie-made UNIX command line interpreter
+.SH COMPLILING
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+.SH DESCRIPTION
+This command interpreter is based on te UNIX shell command line interpreter made by Ken Thompson.
+			Our version allows execution of commands that had to be writen in the standart input.
+.SH USAGE
+This program should be used in a interactive mode, that will show "$cisfun " and the user can write commands and that will be execute. This process is being repeat until the user itself stop it typing "exit" or Ctrl + D. Otherwise, it can be usedin the non interactive mode, where the user can write an output of a command line like an input to the ./hsh program with an |.
+.SH AUTHORS
+Santiago Alves
+Romina Benitez
