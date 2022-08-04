@@ -1,7 +1,20 @@
-SIMPLE_SHELL		Linux Programmer's Manual		SIMPLE_SHELL
+.TH man 1 "04 August 2022" "1.0" "simple_shell man page"
+.SH NAME 
+simple_shell /- homemade UNIX command line interpreter
+.SH SYNOPSIS
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <stddef.h>
+#include <stdarg.h>
+#include <unistd.h>
+#include <signal.h>
+#include <sys/file.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/wait.h>
+.SH DESCRIPTION
 
-NAME
-	simple_shell - UNIX command line interpreter.
-
-SYNOPSIS
-	

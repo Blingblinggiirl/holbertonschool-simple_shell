@@ -1,18 +1,16 @@
 #include "main.h"
 
-int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av, char **env)
+int main(int ac, char **av, char **env)
 {
 	char *buffer = NULL, *token;
-	int status = 0;
 	char *args[1024];
 	size_t str = 0, len = 0;
-	int interactive = 1;
-	int child;
-	int x;
+	int child, x, status = 0, interactive = 1;
+	(void) ac, (void) av;
 
 	while (interactive)
 	{
-		/* printf("$cisfun "); */
+		printf("$cisfun ");
 		if (getline(&buffer, &len, stdin) == -1)
 			break;
 		token = strtok(buffer, " \t\n"); /* aca tokenizas hasta un tab o enter*/
