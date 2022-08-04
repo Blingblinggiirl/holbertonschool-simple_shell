@@ -18,10 +18,9 @@ int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av, char
 		token = strtok(buffer, " \t\n"); /* aca tokenizas hasta un tab o enter*/
 		if (token == NULL)
 			break;
-		if (!strcmp(token, "exit"))
+		if (strcmp(token, "exit") == 0)
 		{
-			free(buffer);
-			return (str);
+			return(str);
 		}
 		if (!strcmp(token, "env"))
 		{
