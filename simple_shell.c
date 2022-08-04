@@ -12,7 +12,7 @@ int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av, char
 
 	while (interactive)
 	{
-		printf("$cisfun ");
+		/* printf("$cisfun "); */
 		if (getline(&buffer, &len, stdin) == -1)
 			break;
 		token = strtok(buffer, " \t\n"); /* aca tokenizas hasta un tab o enter*/
