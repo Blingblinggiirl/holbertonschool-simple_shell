@@ -21,7 +21,7 @@ int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av, char
 		if (strcmp(token, "exit") == 0)
 		{
 			free(buffer);
-			return(str);
+			return (str);
 		}
 		if (!strcmp(token, "env"))
 		{
