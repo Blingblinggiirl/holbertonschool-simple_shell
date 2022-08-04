@@ -5,7 +5,7 @@ int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av, char
 	char *buffer = NULL, *token;
 	int status = 0;
 	char *args[1024];
-	size_t str, len = 0;
+	size_t str = 0, len = 0;
 	int interactive = 1;
 	int child;
 	int x;
