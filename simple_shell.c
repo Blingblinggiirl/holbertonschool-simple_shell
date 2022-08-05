@@ -1,4 +1,7 @@
 #include "main.h"
+/**
+ * simple_shell - holbie-made command line interpreter
+ */
 
 int main(int ac, char **av, char **env)
 {
@@ -54,10 +57,13 @@ int main(int ac, char **av, char **env)
 	free(buffer);
 	return (0);
 }
+/**
+ * prompt - verify is in interactive mode for print #cisfun$
+ */
 
 int prompt(void)
 {
-	if(isatty(STDIN_FILENO) ==1)
-		write(1, "#cisfun$ ",9);
-	return(0);
+	if (isatty(STDIN_FILENO) == 1)
+		write(1, "#cisfun$ ", 9);
+	return (0);
 }
