@@ -1,17 +1,3 @@
-
-# SIMPLE SHELL PROJECT
-
-Simple shell project developed by Romina Benitez and Santiago Alves for Holberton School Uruguay.
-
-
-
-## Description
-The project is a very simple shell developed in C language. A shell is a program that takes commands inputs written from the user's keyboard and passes them to the machine to execute them through the kernel. It also verifies if the command inputs from the user are correct.
-## Prototype
-```bash
-  int main(int ac, char **av, char **env);
-```
-## Compiler
 Our very simple shell is compiled on Ubuntu 20.04 LTS with the following command:
 ```bash
   gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
@@ -35,11 +21,40 @@ To exit out of a command or process the user can use `ctrl c`. `Control c` stops
 
 ## Files
 - `README.md`: Current file, contains information about this project.
-- `main.h`: Header file, contains all prototypes for funcitons used, as well as libriaries.
-- `simple_shell.c`: The main program.
-- `utility_functions`: All the helper functions.
+- [main.h](https://github.com/Blingblinggiirl/holbertonschool-simple_shell/blob/master/main.h): Header file, contains all prototypes for funcitons used, as well as libriaries.
+- [simple_shell](https://github.com/Blingblinggiirl/holbertonschool-simple_shell/blob/master/simple_shell.c): The main program.
+- [Authors of the project](https://github.com/Blingblinggiirl/holbertonschool-simple_shell/blob/master/AUTHORS)
+## Interactive Mode
+
+```
+$ ./hsh
+($) /bin/ls
+hsh main.c shell.c
+($)
+($) exit
+$
+```
+
+
+
+
+## Non-interactive mode
+
+```
+$ echo "/bin/ls" | ./hsh
+hsh main.c shell.c test_ls_2
+$
+$ cat test_ls_2
+/bin/ls
+/bin/ls
+$
+$ cat test_ls_2 | ./hsh
+hsh main.c shell.c test_ls_2
+hsh main.c shell.c test_ls_2
+$
+```
 
 ## Authors
 
-- Romina Benitez - https://github.com/Blingblinggiirl
-- Santiago Alves - https://github.com/santialvesz
+- [Romina Benitez](https://github.com/Blingblinggiirl)
+- [Santiago Alves](https://github.com/santialvesz)
