@@ -10,7 +10,7 @@ int main(int ac, char **av, char **env)
 
 	while (interactive)
 	{
-		printf("$cisfun ");
+		write(1, "cisfun$ ", 8);
 		if (getline(&buffer, &len, stdin) == -1)
 			break;
 		token = strtok(buffer, " \t\n"); /* aca tokenizas hasta un tab o enter*/
