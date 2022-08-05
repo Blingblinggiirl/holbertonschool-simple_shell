@@ -24,4 +24,5 @@ char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
 char *_strdup(char *str);
+int prompt(void);
 #endif

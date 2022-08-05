@@ -10,10 +10,10 @@ int main(int ac, char **av, char **env)
 
 	while (interactive)
 	{
-		write(1, "cisfun$ ", 8);
+		prompt();
 		if (getline(&buffer, &len, stdin) == -1)
 			break;
-		token = strtok(buffer, " \t\n"); /* aca tokenizas hasta un tab o enter*/
+		token = strtok(buffer, " \t\n");
 		if (token == NULL)
 			break;
 		if (strcmp(token, "exit") == 0)
@@ -53,4 +53,11 @@ int main(int ac, char **av, char **env)
 	}
 	free(buffer);
 	return (0);
+}
+
+int prompt(void)
+{
+	if(isatty(STDIN_FILENO) ==1)
+		write(1, "#cisfun$ ",9);
+	return(0);
 }
